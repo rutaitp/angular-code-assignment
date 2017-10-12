@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+  <head>
+    <script data-require="angular.js@1.2.7" data-semver="1.2.7" src="http://code.angularjs.org/1.2.7/angular.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Starter AngularJS app</h1>
+    <div ng-controller="StarWarsCtrl">
+      <h2>Star Wars Characters</h2>
+
+      <!-- dropdown menu -->
+      <select ng-model="selectedCharacter" ng-change="execute()">
+          <option ng-repeat="character in characters" value="{{character.url}}">
+          {{character.name}} </option>
+      </select>
+
+      <!--show url of the selected character-->
+      <p> {{selectedCharacter}}  </p> 
+        
+      <!--show film array-->
+      <p> {{apiData.films}} </p>
+
+      <!-- loop through film array and display each link -->
+      <p ng-model="filmDisplay" ng-repeat="film in apiData.films" value="film">
+        {{film}}
+      </p>
+
+    </div>
+  </body>
+</html>
