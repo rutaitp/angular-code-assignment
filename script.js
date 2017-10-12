@@ -27,7 +27,20 @@ myApp.controller('StarWarsCtrl', function ($scope, $http) {
     $http.get($scope.selectedCharacter)
       .then(function(response) {
         $scope.apiData = response.data;
+        console.log($scope.apiData);
+
+        //try looping here
       });
-    }
+  }
+
+  //execute another function that reads each link and gets data from it
+  //execute function -> for as much as there is data, do $http.get for each link and get response.data
+
+  // DOES NOT WORK
+  // add another scope to read each film link
+  // first console each link
+  // $scope.show = function () {
+  //   console.log($scope.filmDisplay);
+  // }
   
 });

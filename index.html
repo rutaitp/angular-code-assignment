@@ -24,9 +24,13 @@
       <p> {{apiData.films}} </p>
 
       <!-- loop through film array and display each link -->
-      <p ng-model="filmDisplay" ng-repeat="film in apiData.films" value="film">
-        {{film}}
+      <p ng-model="filmDisplay" ng-change="show()">
+        <span ng-repeat="film in apiData.films" value="film"> {{film}} <br></span>
       </p>
+
+      <!-- <p ng-model="filmDisplay" ng-repeat="film in apiData.films" value="film" ng-change="show()">
+        {{film}}
+      </p> -->
 
     </div>
   </body>
