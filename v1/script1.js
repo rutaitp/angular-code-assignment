@@ -30,34 +30,26 @@ myApp.controller('StarWarsCtrl', function ($scope, $http) {
     $http.get($scope.selectedCharacter)
       .then(function(response) {
         $scope.apiData = response.data;
-        // consoles entire object
         console.log($scope.apiData);
 
-        // console only films array
+        // try console'ing only films part
         console.log($scope.apiData.films);
 
-        var allTitles = [];
+        var allLinks = $scope.apiData.films;
 
-        // looping through movie link array
-        angular.forEach($scope.apiData.films, function(value) {
-          // consoles each link
-          console.log(value);
+        // loop through the links and get the data from each
+        for (var i=0; i<allLinks.length; i++) {
+          var oneLink = allLinks[i];
+          console.log(oneLink);
 
-          //and getting data from each
-          $http.get(value)
+          // read each link and console.log the data from it
+          $http.get(oneLink)
             .then(function(response) {
-
-              $scope.valueData = response.data;
-              console.log($scope.valueData.title);
-
-              // //try loop through each response
-              // angular.forEach(response, function(title) {
-              //   $scope.valueData = response.data;
-              //   console.log($scope.valueData.title);
-              // });
-
+              $scope.oneLinkData = response.data;
+              console.log($scope.oneLinkData.title);
             });
-        });
+
+        }
       });
   }
   

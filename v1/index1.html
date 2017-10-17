@@ -21,24 +21,24 @@
       <p> {{selectedCharacter}}  </p> 
         
       <!--show film array-->
-      <p> {{value}} </p>
+      <p> {{apiData.films}} </p>
 
       <!-- loop through film array and display each link -->
-      <p>
+      <p ng-model="filmDisplay" ng-change="show()"> <!-- can delete ng-model and ng-change, not needed here -->
         <span ng-repeat="film in apiData.films" value="film"> {{film}} <br></span>
       </p>
 
-      <!-- display data from each link -->
-      <div id="filmData">
-        <!-- title -->
-        <!-- <p ng-bind="oneLinkData.title"> {{ oneLinkData.title }} </p> -->
+      <!-- display title from each link -->
+      <p> {{ oneLinkData.title }} </p>
 
-        <!-- TRY ANOTHER ONE -->
-        <p> {{ valueData.title }} </p>
+      <!-- try display each link separately -->
+      <p>
+        <span ng-repeat="title in oneLinkData.title track by $index" value="title"> {{ title }} </span>
+      </p>
 
-        <!-- release date -->
-        <p> {{ valueData.release_date | date }} </p>
-      </div>
+      <!-- <p ng-model="filmDisplay" ng-repeat="film in apiData.films" value="film" ng-change="show()">
+        {{film}}
+      </p> -->
 
     </div>
   </body>
