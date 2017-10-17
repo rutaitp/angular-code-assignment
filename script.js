@@ -36,7 +36,9 @@ myApp.controller('StarWarsCtrl', function ($scope, $http) {
         // console only films array
         console.log($scope.apiData.films);
 
-        var allTitles = [];
+        // create an empty array for all the titles and release dates
+        $scope.titles = [];
+        $scope.releaseDates = [];
 
         // looping through movie link array
         angular.forEach($scope.apiData.films, function(value) {
@@ -50,14 +52,13 @@ myApp.controller('StarWarsCtrl', function ($scope, $http) {
               $scope.valueData = response.data;
               console.log($scope.valueData.title);
 
-              // //try loop through each response
-              // angular.forEach(response, function(title) {
-              //   $scope.valueData = response.data;
-              //   console.log($scope.valueData.title);
-              // });
+              $scope.titles.push($scope.valueData.title);
+              $scope.releaseDates.push($scope.valueData.release_date);
 
             });
         });
+        console.log($scope.titles);
+        console.log($scope.releaseDates);
       });
   }
   

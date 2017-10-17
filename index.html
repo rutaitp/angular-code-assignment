@@ -30,14 +30,12 @@
 
       <!-- display data from each link -->
       <div id="filmData">
+
         <!-- title -->
-        <!-- <p ng-bind="oneLinkData.title"> {{ oneLinkData.title }} </p> -->
-
-        <!-- TRY ANOTHER ONE -->
-        <p> {{ valueData.title }} </p>
-
+        <p ng-repeat="title in titles" value="title"> {{ title }} </p>
+        
         <!-- release date -->
-        <p> {{ valueData.release_date | date }} </p>
+        <p ng-repeat="release_date in releaseDates" value="release_date"> {{ release_date | date }} </p>
       </div>
 
     </div>
