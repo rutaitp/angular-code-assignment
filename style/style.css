@@ -62,14 +62,13 @@ a:hover {
 /*text color*/
 .black select   { color: #ffd700; }
 
-/*table div style*/
+/*TABLE*/
 #filmData {
 	max-width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-/*TABLE*/
 table {
 	min-width: 800px;
 	max-width: 1000px;
@@ -87,4 +86,8 @@ table {
 
 tr td {
 	border: 2px solid white;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
