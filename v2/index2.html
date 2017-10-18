@@ -17,12 +17,29 @@
           {{character.name}} </option>
       </select>
 
-      <!-- display data from each movie link -->
+      <!--show url of the selected character-->
+      <p> {{selectedCharacter}}  </p> 
+        
+      <!--show film array-->
+      <p> {{value}} </p>
+
+      <!-- loop through film array and display each link -->
+      <p>
+        <span ng-repeat="film in apiData.films" value="film"> {{film}} <br></span>
+      </p>
+
+      <!-- display data from each link -->
       <div id="filmData">
 
         <p ng-repeat="data in allData">
-          {{ data.data }}, {{ data.value }}
+          {{ data.data }} {{ data.value }}
         </p>
+
+        <!-- title -->
+        <!-- <p ng-repeat="title in titles" value="title"> {{ title }} </p> -->
+
+        <!-- release date -->
+        <!-- <p ng-repeat="release_date in releaseDates" value="release_date"> {{ release_date | date }} </p> -->
       </div>
 
     </div>

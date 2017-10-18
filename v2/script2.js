@@ -1,5 +1,5 @@
 // Instantiate the app, the 'myApp' parameter must 
-// match what is in ng-app
+// match what is ins ng-app
 var myApp = angular.module('myApp', []);
 
 // Create the controller, the 'StarWarsCtrl' parameter 
@@ -21,32 +21,40 @@ myApp.controller('StarWarsCtrl', function ($scope, $http) {
     "url": "https://swapi.co/api/people/2/"
   }];
 
-  //execute this function after user selects Star Wars character
   $scope.execute = function () {
-    // get inside selected URL and read the data (entire object)
+    // consoles the selectedCharacter URL
+    console.log($scope.selectedCharacter);
+
+    // gets inside that URL and reads the data (object)
+    // later we take films part from the object in index.html
     $http.get($scope.selectedCharacter)
       .then(function(response) {
         $scope.apiData = response.data;
+        // consoles entire object
+        console.log($scope.apiData);
 
-        // create empty arrays for the data from each link that we'll be using later
+        // console only films array
+        console.log($scope.apiData.films);
+
+        // create an empty array for all the titles and release dates
         $scope.titles = [];
         $scope.releaseDates = [];
-        //also create an object to bind arrays together
-        $scope.allData = {};
 
-        // loop through the film link array from the selected URL
-        angular.forEach($scope.apiData.films, function(link) {
+        // looping through movie link array
+        angular.forEach($scope.apiData.films, function(value) {
+          // consoles each link
+          console.log(value);
 
-          //get data from each link in the array
-          $http.get(link)
+          //and getting data from each
+          $http.get(value)
             .then(function(response) {
               $scope.valueData = response.data;
+              console.log($scope.valueData.title);
 
-              //push necessary keys to new arrays of data (titles, release dates)
               $scope.titles.push($scope.valueData.title);
               $scope.releaseDates.push($scope.valueData.release_date);
 
-              //bind two arrays together, so data appears together in HTML
+              //this added new
               $scope.allData = $scope.titles.map(function(value, index) {
                 return {
                   data: value,
@@ -56,6 +64,9 @@ myApp.controller('StarWarsCtrl', function ($scope, $http) {
 
             });
         });
+        console.log($scope.titles);
+        console.log($scope.releaseDates);
+        console.log($scope.allData);
       });
   }
   
