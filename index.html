@@ -2,36 +2,41 @@
 <html ng-app="myApp">
 
   <head>
-    <script data-require="angular.js@1.2.7" data-semver="1.2.7" src="http://code.angularjs.org/1.2.7/angular.js"></script>
-    <link href="style.css" rel="stylesheet" />
+    <script data-require="angular.js@1.2.7" data-semver="1.2.7" src="http://code.angularjs.org/1.2.7/angular.js">
+    </script>
     <script type="text/javascript" src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
   </head>
   <body>
-    <h1>Starter AngularJS app</h1>
+    <h1 id="title">Which movie was he in?</h1>
     <div ng-controller="StarWarsCtrl">
-      <h2>Star Wars Characters</h2>
+      <p id="description">
+        Star Wars is a film series created by George Lucas. It depicts the adventures of various characters "a long time ago in a galaxy far, far away". Using this website you can learn about films that a particular character appears in.
+        Website uses Star Wars API <a href="https://swapi.co" target="_blank">swapi.co</a>.
+      </p>
 
       <!-- dropdown menu -->
-      <select ng-model="selectedCharacter" ng-change="execute()">
+      <div class="styled-select black" >
+        <select ng-model="selectedCharacter" ng-change="execute()">
+          <option value="" disabled selected>Select a Star Wars Character</option>
           <option ng-repeat="character in characters" value="{{character.url}}">
           {{character.name}} </option>
-      </select>
+        </select>
+      </div>
 
       <!-- display data from each movie link -->
       <div id="filmData">
 
-        <!-- <p ng-repeat="data in allData">
-          {{ data.data }}, {{ data.value }}
-        </p> -->
-
-        <table>
+        <table class="tableData">
           <tr>
             <th>Movie title</th>
             <th>Release date</th>
+            <th>Director</th>
           </tr>
           <tr ng-repeat="data in allData">
             <td> {{ data.data }} </td>
-            <td> {{ data.value }} </td>
+            <td> {{ data.value | date}} </td>
             <td> {{ data.director }} </td>
           </tr>
         </table>

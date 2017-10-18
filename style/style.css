@@ -1,0 +1,90 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+	max-width: 1200px;
+	min-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+	font-family: Helvetica, sans-serif;
+	background-image: url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png");
+}
+
+#title {
+	height: 50px;
+	text-align: center;
+	color: #ffd700;
+	font-size: 80px;
+}
+
+#description {
+	text-align: justify;
+	color: #ffd700;
+	font-family: "News Cycle", sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+/*style link*/
+a {
+	color: white;
+}
+a:hover {
+	color: blue;
+}
+
+/*DROPDOWN MENU*/
+.styled-select {
+	background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+	height: 29px;
+	overflow: hidden;
+	width: 240px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.styled-select select {
+	background: transparent;
+	border: 1px solid white;
+	font-size: 16px;
+	height: 29px;
+	padding: 5px;
+	width: 268px;
+	text-align: center;
+	font-family: "Proxima Nova", sans-serif;
+}
+
+/*add color*/
+.black   { background-color: black; }
+
+/*text color*/
+.black select   { color: #ffd700; }
+
+/*table div style*/
+#filmData {
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*TABLE*/
+table {
+	min-width: 800px;
+	max-width: 1000px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: "Proxima Nova", sans-serif;
+	font-size: 22px;
+	color:white;
+	border: 2px solid white;
+	border-spacing: 0.5rem;
+	border-collapse: collapse;
+}
+
+tr td {
+	border: 2px solid white;
+}
