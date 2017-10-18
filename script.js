@@ -31,6 +31,7 @@ myApp.controller('StarWarsCtrl', function ($scope, $http) {
         // create empty arrays for the data from each link that we'll be using later
         $scope.titles = [];
         $scope.releaseDates = [];
+        $scope.directors = [];
         //also create an object to bind arrays together
         $scope.allData = {};
 
@@ -45,12 +46,14 @@ myApp.controller('StarWarsCtrl', function ($scope, $http) {
               //push necessary keys to new arrays of data (titles, release dates)
               $scope.titles.push($scope.valueData.title);
               $scope.releaseDates.push($scope.valueData.release_date);
+              $scope.directors.push($scope.valueData.director);
 
               //bind two arrays together, so data appears together in HTML
               $scope.allData = $scope.titles.map(function(value, index) {
                 return {
                   data: value,
-                  value: $scope.releaseDates[index]
+                  value: $scope.releaseDates[index],
+                  director: $scope.directors[index]
                 }
               });
 

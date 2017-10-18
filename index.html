@@ -20,9 +20,21 @@
       <!-- display data from each movie link -->
       <div id="filmData">
 
-        <p ng-repeat="data in allData">
+        <!-- <p ng-repeat="data in allData">
           {{ data.data }}, {{ data.value }}
-        </p>
+        </p> -->
+
+        <table>
+          <tr>
+            <th>Movie title</th>
+            <th>Release date</th>
+          </tr>
+          <tr ng-repeat="data in allData">
+            <td> {{ data.data }} </td>
+            <td> {{ data.value }} </td>
+            <td> {{ data.director }} </td>
+          </tr>
+        </table>
       </div>
 
     </div>
