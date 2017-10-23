@@ -26,9 +26,9 @@
       </div>
 
       <!-- display data from each movie link -->
-      <div id="filmData" ng-cloak>
+      <div id="filmData" ng-show="allData" class="ng-hide">
 
-        <table class="tableData">
+        <table>
           <tr>
             <th>Movie title</th>
             <th>Release date</th>
@@ -36,8 +36,8 @@
           </tr>
           <tr ng-repeat="data in allData">
             <td> {{ data.data }} </td>
-            <td> {{ data.value | date:"fullDate"}} </td>
-            <td> {{ data.director }} </td>
+            <td ng-show="allData" class="ng-hide"> {{ data.value | date:"fullDate"}} </td>
+            <td ng-show="allData" class="ng-hide"> {{ data.director }} </td>
           </tr>
         </table>
       </div>
