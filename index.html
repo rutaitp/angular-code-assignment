@@ -36,7 +36,7 @@
           </tr>
           <tr ng-repeat="data in allData">
             <td> {{ data.data }} </td>
-            <td> {{ data.value | date}} </td>
+            <td> {{ data.value | date:"fullDate"}} </td>
             <td> {{ data.director }} </td>
           </tr>
         </table>

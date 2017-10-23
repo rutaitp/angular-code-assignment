@@ -42,7 +42,7 @@ myApp.controller('StarWarsCtrl', function ($scope, $http) {
           $http.get(link)
             .then(function(response) {
               $scope.valueData = response.data;
-
+              
               //push necessary keys into new arrays of data (titles, release dates, director names)
               $scope.titles.push($scope.valueData.title);
               $scope.releaseDates.push($scope.valueData.release_date);
