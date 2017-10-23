@@ -87,7 +87,3 @@ table {
 tr td {
 	border: 2px solid white;
 }
-
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
-}
